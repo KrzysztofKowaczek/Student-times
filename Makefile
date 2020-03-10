@@ -7,7 +7,7 @@ __start__: ${TRGDIR}/complex_test
 	${TRGDIR}/complex_test  latwy
 
 ${TRGDIR}/complex_test: ${OBJ} ${OBJ}/main.o ${OBJ}/Complex.o\
-                     ${OBJ}/Expression.o ${OBJ}/Database.o ${OBJ}/Database.o\
+                     ${OBJ}/Expression.o ${OBJ}/Database.o
 	g++ -o ${TRGDIR}/complex_test ${OBJ}/main.o ${OBJ}/Complex.o\
                      ${OBJ}/Expression.o ${OBJ}/Database.o\
 
@@ -17,7 +17,7 @@ ${OBJ}:
 ${OBJ}/main.o: src/main.cpp inc/Complex.hh inc/Database.hh
 	g++ -c ${FLAGS} -o ${OBJ}/main.o src/main.cpp
 
-${OBJ}/Complex.o: src/Complex.cpp inc/Complex.hh inc/Expression.hh\
+${OBJ}/Complex.o: src/Complex.cpp inc/Complex.hh inc/Expression.hh
 	g++ -c ${FLAGS} -o ${OBJ}/Complex.o src/Complex.cpp
 
 ${OBJ}/Database.o: src/Database.cpp inc/Database.hh inc/Expression.hh\

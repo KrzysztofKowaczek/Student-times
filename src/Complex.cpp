@@ -1,5 +1,4 @@
 #include "Complex.hh"
-#include "Arithmetics.hh"
 
 /*!
  * Realizuje dodanie dwoch liczb zespolonych.
@@ -55,4 +54,16 @@ Complex operator/(Complex arg1, double arg2)
     arg1.re /= arg2;
     arg1.im /= arg2;
     return arg1;
+}
+
+Complex conjugate(Complex c)
+{
+    c.im *= -1;
+    return c;
+}
+
+double absSquared(Complex c)
+{
+    double result = (c.re * c.re) + (c.im * c.im);
+    return result;
 }
