@@ -17,6 +17,14 @@ Complex operator+(Complex arg1, Complex arg2)
     return result;
 }
 
+/*!
+ * Realizuje odejmowanie dwoch liczb zespolonych.
+ * PRE:
+ *      arg1 - pierwszy skladnik odejmowania,
+ *      arg2 - drugi skladnik odejmowania.
+ * POST:
+ *      Zwraca roznice dwoch skladnikow przekazanych jako parametry.
+ */ 
 Complex operator-(Complex arg1, Complex arg2)
 {
     Complex result;
@@ -26,6 +34,14 @@ Complex operator-(Complex arg1, Complex arg2)
     return result;
 }
 
+/*!
+ * Realizuje mnozenie dwoch liczb zespolonych.
+ * PRE:
+ *      arg1 - pierwszy skladnik mnozenia,
+ *      arg2 - drugi skladnik mnozenia.
+ * POST:
+ *      Zwraca iloczyn dwoch skladnikow przekazanych jako parametry.
+ */ 
 Complex operator*(Complex arg1, Complex arg2)
 {
     Complex result;
@@ -35,11 +51,19 @@ Complex operator*(Complex arg1, Complex arg2)
     return result;
 }
 
+/*!
+ * Realizuje dzielenie dwoch liczb zespolonych.
+ * PRE:
+ *      arg1 - pierwszy skladnik dzielenia,
+ *      arg2 - drugi skladnik dzielenia.
+ * POST:
+ *      Zwraca iloraz dwoch skladnikow przekazanych jako parametry.
+ */ 
 Complex operator/(Complex arg1, Complex arg2)
 {
     Complex result;
 
-    result = (arg1 * conjugate(arg2)) / absSquared(arg2);
+    result = (arg1 * Conjugate(arg2)) / AbsSquared(arg2);
 
     if(result.im == 0)
         result.im = 0;
@@ -49,6 +73,14 @@ Complex operator/(Complex arg1, Complex arg2)
     return result;
 }
 
+/*!
+ * Realizuje dzielenie liczby zespolonej i rzeczywistej.
+ * PRE:
+ *      arg1 - liczba zespolona,
+ *      arg2 - liczba rzeczywista.
+ * POST:
+ *      Zwraca iloraz dwoch skladnikow przekazanych jako parametry.
+ */ 
 Complex operator/(Complex arg1, double arg2)
 {
     arg1.re /= arg2;
@@ -56,13 +88,27 @@ Complex operator/(Complex arg1, double arg2)
     return arg1;
 }
 
-Complex conjugate(Complex c)
+/*!
+ * Realizuje sprzezenie liczby zespolonej.
+ * PRE:
+ *      c - liczba zespolona do sprzezenia.
+ * POST:
+ *      Zwraca sprzezona liczbe zespolona.
+ */
+Complex Conjugate(Complex c)
 {
     c.im *= -1;
     return c;
 }
 
-double absSquared(Complex c)
+/*!
+ * Liczy kwadrat modulu liczby zespolonej.
+ * PRE:
+ *      c - liczba zespolona.
+ * POST:
+ *      Zwraca podniesiony do kwadratu modul liczby zespolonej.
+ */
+double AbsSquared(Complex c)
 {
     double result = (c.re * c.re) + (c.im * c.im);
     return result;

@@ -7,6 +7,12 @@
  * w pliku naglowkowym.
  */
 
+
+/*!
+ * Wyswietla wyrazenie liczb zespolonych.
+ * PRE:
+ *      expr - wyrazenie liczb zespolonych.
+ */
 void Display(Expression expr)
 {
     Display(expr.arg1);
@@ -28,6 +34,12 @@ void Display(Expression expr)
     Display(expr.arg2);
 }
 
+
+/*!
+ * Wyswietla pojedyncza liczbe zespolona w postaci (x+yi).
+ * PRE:
+ *      c - liczba zespolona.
+ */
 void Display(Complex c)
 {
     if(c.im < 0)
@@ -36,6 +48,13 @@ void Display(Complex c)
         std::cout << "(" << c.re << "+" << c.im << "i" << ")";
 }
 
+/*!
+ * Rozwiazuje wyrazenie liczb zespolonych.
+ * PRE:
+ *      expr - wyrazenie liczb zespolonych.
+ * POST:
+ *      Zwraca wynik wyrazenia liczb zespolonych.
+ */
 Complex Solve(Expression expr)
 {
     Complex result;

@@ -29,5 +29,5 @@ Complex operator/(Complex arg1, double arg2);
  * Funkcje obliczajace sprzezenie i modul liczby zespolonej
  */
 
-Complex conjugate(Complex c);
-double absSquared(Complex c);
+Complex Conjugate(Complex c);
+double AbsSquared(Complex c);
